@@ -1,7 +1,7 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Compress,
+  Minimize2,
   Download,
   RefreshCw,
   ArrowLeft,
@@ -21,7 +21,7 @@ import {
   type ProcessedImage,
 } from '../services/imageProcessing';
 
-export default function CompressImage() {
+export default function Minimize2Image() {
   const { t, isRTL } = useLanguage();
   const [files, setFiles] = useState<UploadedFile[]>([]);
   const [processedImages, setProcessedImages] = useState<ProcessedImage[]>([]);
@@ -63,7 +63,7 @@ export default function CompressImage() {
     setMessage(null);
   }, [files, processedImages]);
 
-  const handleCompress = async () => {
+  const handleMinimize2 = async () => {
     const validFiles = files.filter((f) => !f.error);
     if (validFiles.length === 0) {
       setMessage({ type: 'error', text: t.errors.noFiles });
@@ -107,13 +107,13 @@ export default function CompressImage() {
     setQuality(80);
   };
 
-  const getCompressionLevel = () => {
+  const getMinimize2ionLevel = () => {
     if (quality >= 85) return { label: t.compress.low, color: 'text-success', bg: 'bg-green-50', border: 'border-green-200' };
     if (quality >= 60) return { label: t.compress.medium, color: 'text-blue', bg: 'bg-blue-light', border: 'border-blue-200' };
     return { label: t.compress.high, color: 'text-orange-600', bg: 'bg-orange-50', border: 'border-orange-200' };
   };
 
-  const level = getCompressionLevel();
+  const level = getMinimize2ionLevel();
   const totalOriginal = processedImages.reduce((sum, img) => sum + img.originalSize, 0);
   const totalNew = processedImages.reduce((sum, img) => sum + img.newSize, 0);
   const totalSaved = totalOriginal > 0 ? Math.round(((totalOriginal - totalNew) / totalOriginal) * 100) : 0;
@@ -133,7 +133,7 @@ export default function CompressImage() {
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-3">
           <div className="w-12 h-12 rounded-xl bg-blue-light flex items-center justify-center">
-            <Compress className="w-6 h-6 text-blue" />
+            <Minimize2 className="w-6 h-6 text-blue" />
           </div>
           <div>
             <h1 className="text-2xl md:text-3xl font-bold text-navy">{t.compress.title}</h1>
@@ -194,7 +194,7 @@ export default function CompressImage() {
 
           {/* Action Button */}
           <button
-            onClick={handleCompress}
+            onClick={handleMinimize2}
             disabled={isProcessing || files.filter((f) => !f.error).length === 0}
             className="btn-primary w-full btn-lg"
           >
@@ -205,7 +205,7 @@ export default function CompressImage() {
               </>
             ) : (
               <>
-                <Compress className="w-5 h-5" />
+                <Minimize2 className="w-5 h-5" />
                 {t.compress.compressBtn}
               </>
             )}

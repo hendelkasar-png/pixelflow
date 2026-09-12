@@ -5,7 +5,7 @@ import { useLanguage } from '../hooks/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
-  const { t, isRTL } = useLanguage();
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();

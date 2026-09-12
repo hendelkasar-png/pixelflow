@@ -29,7 +29,7 @@ export default function UploadZone({
   maxSizeMB = 20,
   showFileList = true,
 }: UploadZoneProps) {
-  const { t, isRTL } = useLanguage();
+  const { t } = useLanguage();
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 

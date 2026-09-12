@@ -3,7 +3,7 @@ import { Home, AlertTriangle } from 'lucide-react';
 import { useLanguage } from '../hooks/LanguageContext';
 
 export default function NotFound() {
-  const { t, isRTL } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <div className="container-page py-20 md:py-32">

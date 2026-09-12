@@ -3,7 +3,7 @@ import { Image as ImageIcon } from 'lucide-react';
 import { useLanguage } from '../hooks/LanguageContext';
 
 export default function Footer() {
-  const { t, isRTL } = useLanguage();
+  const { t } = useLanguage();
 
   const quickLinks = [
     { to: '/', label: t.nav.home },

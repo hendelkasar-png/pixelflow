@@ -8,7 +8,7 @@ import {
   Shield,
   ArrowRight,
   ChevronRight,
-  Compress,
+  Minimize2,
   Maximize2,
   Repeat,
   Sparkles,
@@ -152,7 +152,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <ToolCard
-            icon={Compress}
+            icon={Minimize2}
             title={t.tools.compress.title}
             description={t.tools.compress.desc}
             actionLabel={t.tools.compress.action}
